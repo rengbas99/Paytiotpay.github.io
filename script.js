@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const sendRequestButton = document.getElementById("sendRequest");
     if (sendRequestButton) {
         sendRequestButton.addEventListener("click", function() {
-            const apiEndpoint = "https://api.ugpayments.ch/merc"; // Replace with your actual API endpoint
+            const apiEndpoint = "https://api.ugpayments.ch/merchants/83459/ThreeDSaleTransactions"; // Replace with your actual API endpoint
 
             // Prepare the data to be sent in the final POST request
             const finalRequestData = {
