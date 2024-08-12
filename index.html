@@ -3,95 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Form</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Term URL - OTP Handler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        #response {
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        #finalResponse {
+            padding: 10px;
+            background-color: #dff0d8;
+            border: 1px solid #3c763d;
+            color: #3c763d;
+        }
+    </style>
 </head>
 <body>
-    <h1>Payment Form</h1>
-    <form id="paymentForm">
-        <!-- Site Information -->
-        <label for="siteId">Site ID:</label>
-        <input type="text" id="siteId" name="siteId" placeholder="11" required><br><br>
-
-        <label for="amount">Amount:</label>
-        <input type="text" id="amount" name="amount" placeholder="123.45" required><br><br>
-
-        <label for="currency">Currency:</label>
-        <input type="text" id="currency" name="currency" placeholder="USD" required><br><br>
-
-        <!-- Personal Information -->
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" placeholder="John" required><br><br>
-
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" placeholder="Doe" required><br><br>
-
-        <label for="phone">Phone:</label>
-        <input type="text" id="phone" name="phone" placeholder="555-555-5555" required><br><br>
-
-        <label for="addressLine1">Address Line 1:</label>
-        <input type="text" id="addressLine1" name="addressLine1" placeholder="123 Fake St." required><br><br>
-
-        <label for="addressLine2">Address Line 2:</label>
-        <input type="text" id="addressLine2" name="addressLine2" placeholder="Optional"><br><br>
-
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" placeholder="Hollywood" required><br><br>
-
-        <label for="state">State:</label>
-        <input type="text" id="state" name="state" placeholder="CA" required><br><br>
-
-        <label for="countryId">Country ID:</label>
-        <input type="text" id="countryId" name="countryId" placeholder="US" required><br><br>
-
-        <label for="postalCode">Postal Code:</label>
-        <input type="text" id="postalCode" name="postalCode" placeholder="12345" required><br><br>
-
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" placeholder="Optional"><br><br>
-
-        <!-- Payment Information -->
-        <label for="cardNumber">Card Number:</label>
-        <input type="text" id="cardNumber" name="cardNumber" placeholder="4024007118676898" required><br><br>
-
-        <label for="nameOnCard">Name on Card:</label>
-        <input type="text" id="nameOnCard" name="nameOnCard" placeholder="John J Doe" required><br><br>
-
-        <label for="expirationMonth">Expiration Month:</label>
-        <input type="text" id="expirationMonth" name="expirationMonth" placeholder="11" required><br><br>
-
-        <label for="expirationYear">Expiration Year:</label>
-        <input type="text" id="expirationYear" name="expirationYear" placeholder="2019" required><br><br>
-
-        <label for="cVVCode">CVV Code:</label>
-        <input type="text" id="cVVCode" name="cVVCode" placeholder="402" required><br><br>
-
-        <!-- Additional Information -->
-        <label for="iPAddress">IP Address:</label>
-        <input type="text" id="iPAddress" name="iPAddress" placeholder="127.0.0.0" required><br><br>
-
-        <label for="trackingID">Tracking ID:</label>
-        <input type="text" id="trackingID" name="trackingID" placeholder="123"><br><br>
-
-        <label for="isInitialForRecurring">Is Initial For Recurring:</label>
-        <input type="checkbox" id="isInitialForRecurring" name="isInitialForRecurring"><br><br>
-
-        <!-- Browser Data (hidden) -->
-        <input type="hidden" id="browserdata" name="browserdata" value='{
-            "AcceptHeaders": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-            "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            "AcceptLanguage": "en-US",
-            "ColorDepth": "8",
-            "IsJavaEnabled": true,
-            "IsJavaScriptEnabled": true,
-            "ScreenHeight": "480",
-            "ScreenWidth": "640",
-            "TimeZone": "-300"
-        }'>
-
-        <button type="submit">Submit</button>
-    </form>
-    <div id="response"></div>
+    <h2>Term URL - Response Handler</h2>
+    <div id="response">
+        <h3>Received Response:</h3>
+        <pre id="responseData"></pre>
+    </div>
+    <button id="sendRequest">Send Final Request</button>
+    <div id="finalResponse" style="display: none;">
+        <h3>Final API Response:</h3>
+        <pre id="finalResponseData"></pre>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
