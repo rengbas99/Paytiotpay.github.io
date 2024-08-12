@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Term URL - OTP Handler</title>
+    <title>Term URL - Response Handler</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,6 +22,17 @@
             border: 1px solid #3c763d;
             color: #3c763d;
         }
+        #error {
+            padding: 10px;
+            background-color: #f2dede;
+            border: 1px solid #ebccd1;
+            color: #a94442;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -35,6 +46,7 @@
         <h3>Final API Response:</h3>
         <pre id="finalResponseData"></pre>
     </div>
+    <div id="error" style="display: none;"></div>
     <script src="script.js"></script>
 </body>
 </html>
